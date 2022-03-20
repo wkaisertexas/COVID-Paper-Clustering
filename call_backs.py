@@ -3,6 +3,8 @@ from bokeh.models import CustomJS
 # handle the currently selected article
 def selected_code():
     code = """
+    	    
+	    console.log("Selected Code Ran")
             let titles = [];
             let authors = [];
             let journals = [];
@@ -25,9 +27,11 @@ def input_callback(plot, source, out_text, topics):
 
     # slider call back for cluster selection
     callback = CustomJS(args=dict(p=plot, source=source, out_text=out_text, topics=topics), code="""
-				let key = text.value;
-				key = key.toLowerCase();
-				let cluster = slider.value;
+		console.log("Input Callback ran")
+		
+		let key = text.value;
+		key = key.toLowerCase();
+		let cluster = slider.value;
                 let data = source.data; 
                 
                 
