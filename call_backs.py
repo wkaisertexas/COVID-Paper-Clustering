@@ -3,10 +3,10 @@ from bokeh.models import CustomJS
 # handle the currently selected article
 def selected_code():
     code = """
-            var titles = [];
-            var authors = [];
-            var journals = [];
-            var links = [];
+            let titles = [];
+            let authors = [];
+            let journals = [];
+            let links = [];
             cb_data.source.selected.indices.forEach(index => titles.push(source.data['titles'][index]));
             cb_data.source.selected.indices.forEach(index => authors.push(source.data['authors'][index]));
             cb_data.source.selected.indices.forEach(index => journals.push(source.data['journal'][index]));
@@ -25,10 +25,10 @@ def input_callback(plot, source, out_text, topics):
 
     # slider call back for cluster selection
     callback = CustomJS(args=dict(p=plot, source=source, out_text=out_text, topics=topics), code="""
-				var key = text.value;
+				let key = text.value;
 				key = key.toLowerCase();
-				var cluster = slider.value;
-                var data = source.data; 
+				let cluster = slider.value;
+                let data = source.data; 
                 
                 
                 x = data['x'];
