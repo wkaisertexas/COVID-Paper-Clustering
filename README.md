@@ -1,6 +1,7 @@
 # COVID-Paper-Clustering
 Clustering papers written about COVID 19 based on their impact. 
 
+> [!NOTE]
 > If you would like to see the project on Kaggle, click [here](https://www.kaggle.com/code/williamkaiser/textual-and-impact-based-cord19-clustering).
 
 ![Covid clustering](./covid_clustering.png)
@@ -40,7 +41,7 @@ Perhaps the most important decision was what weight to assing each paper's impac
 This normalized vector was then combined with the paper vector after going through a round of *PCA* to reduce dimesions. The final paper vector can be expressed as:
 
 ```math
-V_{paper} = (1-p)T_{paper} +p\sigma(I_{paper})$$
+V_{paper} = (1-p)T_{paper} +p\sigma(I_{paper})
 ```
 
 Where:
